@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="main.js"></script>
+    <title>Sketchi</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Asap";
+    }
+
+    .error-button {
+        background: #d55e23;
+        color: #fdc274;
+        font-size: 20px;
+        border: 0;
+        padding: .5rem;
+    }
+
+    .error {
+        border-radius: 10px;
+        background-color: rgba(213, 59, 35, .9);
+        color: white;
+    }
+
+    body {
+        display: grid;
+        height: 100vh;
+        width: 100%;
+        grid-template-rows: 1fr 8fr 8fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "main main main"
+            "main main main"
+            "footer footer footer"
+    }
+
+    main {
+        grid-area: main;
+        background: linear-gradient(-45deg, #ee7752, #e79d3c, #d55e23, #d53b23);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 1rem;
+        grid-template-rows: 1fr 0fr;
+    }
+
+    footer {
+        grid-area: footer;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        background: linear-gradient(-45deg, #ee7752, #e79d3c, #d55e23, #d53b23);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        align-items: center;
+        justify-items: center;
+        display: grid;
+    }
+
+    form {
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+        min-width: 350px;
+    }
+    form > input {
+        padding: 1rem;
+        border: 0;
+        border-bottom: 1px solid orange;
+    }
+
+     form > button {
+        padding: 1rem;
+            background: #d55e23;
+        color: #fdc274;
+        font-size: 20px;
+        border: 0;
+        padding: .5rem;
+    }
+
+
+    header {
+        grid-area: header;
+        background: linear-gradient(-45deg, #ee7752, #e79d3c, #d55e23, #d53b23);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+
+        box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+    }
+
+    .logo {
+        display: grid;
+        width: fit-content;
+        grid-template-columns: 1fr 0fr;
+        align-items: center;
+        animation: mymove 5s infinite;
+        cursor: pointer;
+    }
+
+    .functions {
+        justify-self: end;
+        display: grid;
+        cursor: pointer;
+        color: rgb(255, 230, 166);
+        transition: color .5s ease;
+        grid-template-columns: 1fr 1fr;
+        gap:1rem;
+    }
+
+    .function:hover {
+        color: black
+    }
+
+    .sell {
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        border-radius: 10px;
+        animation: pulse 1s ease;
+
+    }
+
+    .demo {
+        transition: all .5s ease;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        border-radius: 10px;
+        animation-delay: 2s;
+        animation: fadein 3s ease;
+
+    }
+
+    .demo:hover {
+        background: black;
+        color: white;
+    }
+
+    @keyframes mymove {
+        0% {
+            color: rgb(255, 230, 166);
+        }
+
+        50% {
+            color: rgb(255, 193, 78);
+        }
+
+        100% {
+            color: rgb(255, 230, 166);
+        }
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+            transform: translateX(-2000px);
+        }
+
+        50% {
+            box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+            transform: translateX(0px);
+
+        }
+
+        100% {
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+            transform: translateX(0px);
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <figure class="logo">
+            <h2 class="logo">Sketchi
+            </h2>
+            <i class="material-icons">cloud</i>
+        </figure>
+  
+        <figure class="functions">
+            <h4 class="function register">Register</h4>
+            <h4 class="function login""">Login</h4>
+        </figure>
+    </header>
+    <main>
+        <section class="sell">
+            Blazingly fast rendering and compilation with Sketchi
+        </section>
+        <section class="demo">
+            Request Demo
+        </section>
+    </main>
+    <footer>
+        <h2 class="logo">Sketchi AB
+        </h2>
+    </footer>
+</body>
+
+</html>
